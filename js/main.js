@@ -15,7 +15,7 @@ $(document).ready(function() {
     $('.add').click(function(){
 
         $.ajax({
-            type:"GET"
+            type:"POST"
             , url:"http://vfv-api.azurewebsites.net/api/lap/add?startNumber=" + $(this).parent().data("runnerNo")
             , dataType:"jsonp",
             jsonpCallback: "localJsonpCallback",
