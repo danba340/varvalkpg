@@ -12,25 +12,31 @@ body {
 h1 {
   text-align: center;
 }
-   #container {
-      position: relative;
-     display: flex;
-     flex-flow: row wrap;
-     border: 1px solid green;
-     padding: 1px;
-   }
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  #container {
+    margin: 0 !important;
+    width: 100% !important;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid green;
+    padding: 1px;
+  }
 
    #container > * {
-     border: 3px solid black;
-     height: 80px;
-     width: 80px;
+
+     height: 100px;
+     width: 100px;
      margin: 1px;
    }
 
    .button {
     text-align: center;
-    padding-top: 20px;
-    font-size: 22px;
+    padding-top: 22px;
+    font-size: 18px;
     font-weight: bold;
     font-family: Arial;
     border-radius: 5px;
@@ -41,7 +47,7 @@ h1 {
    .button span {
     text-align: center;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 2pxs
    }
 
@@ -52,24 +58,39 @@ h1 {
 
 .enlarge {
   position: absolute;
-  left: 25%;
-  top: 10%;
-  width: 50% !important;
-  height: 50% !important;
-  animate: all 1s ease;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  transition: width, height 0.5s ease;
   z-index: 10;
 }
 
 .close {
   position: absolute;
-  top: 100px;
-  right: 200px;
+  top: 0px;
+  right: 20px;
   font-size: 72px;
   border: none;
   text-align: center;
   z-index: 20;
   opacity: 1;
   display: none;
+  color: black;
+  width: 60px;
+}
+
+.add {
+  display: none;
+}
+
+.enlarge .add {
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 50px);
+  height: 100px;
+  width: 100px;
+  display: block;
 }
 
 
