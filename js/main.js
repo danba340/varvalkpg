@@ -41,4 +41,21 @@ $(document).ready(function() {
 
 });
 
+var redrawButtons = function() {
+  var lapcounts = [];
+  $('.lapcount').each(function(index, element){
+    lapcounts[index] = element;
+  });
+  $.get("http://vfv-api.azurewebsites.net/api/lap/getparticipantslapcount", function(data) {
+      $.each(data, function(key, val){
+          $(lapcounts[key - 1]).html("<span>Varv: </span>" + String(val));
+      });
+  });
+};
+
+var interval = 1000 * 60 * 0.1; // where X is your every X minutes
+
+setInterval(redrawButtons, interval);
+
+
 
